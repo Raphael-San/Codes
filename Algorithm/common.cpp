@@ -4,7 +4,7 @@
 #include<fstream>
 using namespace std;
 
-size_t size = 1000000;
+size_t size = 250000;
 
 void DisplayDigital(int *a, int flag)
 {
@@ -18,7 +18,7 @@ void DisplayDigital(int *a, int flag)
 		else if (a[i]<1000)
 			cout << '0' << a[i--];
 		else
-			cout << a[i--];
+			cout << a[i--]; 
 	}
 	cout << endl;
 }
@@ -36,11 +36,11 @@ int main()
 	int i = 0;
 	for (i = 0; i < size - 1; i++)
 	{
-		multiplicand[i] = rand() % 10;
-		multiplier[i] = rand() % 10 ;
+		multiplicand[i] = rand() % 10000;
+		multiplier[i] = rand() % 10000 ;
 	}
-	multiplicand[i] = rand() % 9 + 1;
-	multiplier[i] = rand() % 9 + 1;
+	multiplicand[i] = rand() % 9000 + 1000;
+	multiplier[i] = rand() % 9000 + 1000;
 
 	start = clock();
 	for (i = 0; i < size; i++)
@@ -52,8 +52,8 @@ int main()
 		{
 			temp = multiplier[i] * multiplicand[j] + carry + result[i + j];
 
-			result[i + j] = temp % 10;
-			carry = temp / 10;
+			result[i + j] = temp % 10000;
+			carry = temp / 10000;
 		}
 		result[i + j] += carry;
 	}
@@ -63,17 +63,9 @@ int main()
 	cout << (double)(end - start) / CLOCKS_PER_SEC << endl;
 
 	/*
-	for (int i = size - 1; i >= 0; i--)
-		cout << multiplicand[i];
-	cout << endl;
-
-	for (int i = size - 1; i >= 0; i--)
-		cout << multiplier[i];
-	cout << endl;
-
-	for (int i = 2*size - 1; i >= 0; i--)
-		cout << result[i];
-	cout << endl;
+	DisplayDigital(multiplicand, 1);
+	DisplayDigital(multiplier, 1);
+	DisplayDigital(result, 2);
 	*/
 	time_t nowtime;
 	nowtime = time(NULL);
