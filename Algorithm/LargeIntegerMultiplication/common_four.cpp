@@ -30,7 +30,6 @@ int main()
 	int *multiplicand = new int[size];
 	int *result = new int[2 * size]();
 
-	//ofstream mark("F:/Study/2014fall/Algorithm/record.txt", ios::app);
 
 	srand((int)time(0));
 	int i = 0;
@@ -62,11 +61,6 @@ int main()
 	end = clock();
 	cout << (double)(end - start) / CLOCKS_PER_SEC << endl;
 
-	/*
-	DisplayDigital(multiplicand, 1);
-	DisplayDigital(multiplier, 1);
-	DisplayDigital(result, 2);
-	*/
 	time_t nowtime;
 	nowtime = time(NULL);
 	char timebuf[26];
@@ -74,7 +68,6 @@ int main()
 	struct tm ptr;
 	localtime_s(&ptr, &nowtime);
 	asctime_s(timebuf, 26, &ptr);
-	//mark << "位数: " << size * 8 << " 位,  时间为: " << (double)(end - start) / CLOCKS_PER_SEC << " S, " << "当前时间: " << timebuf << endl;
 
 	delete[]multiplier;
 	delete[]multiplicand;
