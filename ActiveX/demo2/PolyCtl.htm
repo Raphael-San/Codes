@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<TITLE>对象 PolyCtl 的 ATL 测试页</TITLE>
+
+    
+    <script type="text/javascript">
+        function modifySizes() {
+            var text = document.getElementById("txt1").value;
+            PolyCtl.modifySizes(text);
+        }
+
+    </script>
+
+
+</HEAD>
+<BODY>
+    <div>
+        <object id="PolyCtl" codebase="Polygon.dll"
+        classid="CLSID:31285D3D-624F-49EE-B4A4-9F5FB97264C8"></object>
+    </div>
+    <div>
+        <input type="text" name="change" id="txt1" />
+        <input type="button" name="test" value="modify" onclick="modifySizes();" />
+    </div>
+
+</BODY>
+</HTML>
